@@ -3,13 +3,23 @@ import RccComponent from "./modules/cach-tao-component/rcc-component";
 import RfcComponent from "./modules/cach-tao-component/rfc-component";
 import HomeLayout from "./modules/home-layout/home-layout";
 import BindingData from "./modules/binding-data/binding-data";
+import HandleEvent from "./modules/handle-event/handle-event";
+import StyleInReact from "./modules/style-in-reactjs";
+import State from "./modules/state/state"
+// import TangGiamFontSize from "./modules/state/tang-giam-font-size";
 
 // đây là file, tạo component App để đưa lên giao diện.
 // js + css + html => .jsx
 function App() {
   return (
     <>
-      <BindingData />
+      <TangGiamFontSize />
+      {/* <State/> */}
+
+      {/* <StyleInReact /> */}
+      {/* <HandleEvent /> */}
+
+      {/* <BindingData /> */}
       {/* <HomeLayout /> */}
       {/* <h1>Hello World</h1> */}
 

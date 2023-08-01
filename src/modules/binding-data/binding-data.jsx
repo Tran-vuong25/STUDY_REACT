@@ -34,6 +34,11 @@ export default class BindingData extends Component {
           {JSON.stringify({ a: 1 })}
           {JSON.stringify([1, 2, 3, 4])}
 
+          {/* {true}
+          {false}
+          {null}
+          {undefined} */}
+
           <br />
           <p>Hôm nay học: {this.course}</p>
           <p>Tại: {cyber}</p>
