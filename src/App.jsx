@@ -6,6 +6,8 @@ import BindingData from "./modules/binding-data/binding-data";
 import HandleEvent from "./modules/handle-event/handle-event";
 import StyleInReact from "./modules/style-in-reactjs";
 import State from "./modules/state/state"
+import TangGiamFontSize from "./modules/state/tang-giam-font-size";
+import ChangeColorHouse from "./modules/state/change-color-house/change-color-house";
 // import TangGiamFontSize from "./modules/state/tang-giam-font-size";
 
 // đây là file, tạo component App để đưa lên giao diện.
@@ -13,7 +15,9 @@ import State from "./modules/state/state"
 function App() {
   return (
     <>
-      <TangGiamFontSize />
+      <ChangeColorHouse />
+
+      {/* <TangGiamFontSize /> */}
       {/* <State/> */}
 
       {/* <StyleInReact /> */}
