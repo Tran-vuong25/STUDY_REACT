@@ -5,18 +5,28 @@ import HomeLayout from "./modules/home-layout/home-layout";
 import BindingData from "./modules/binding-data/binding-data";
 import HandleEvent from "./modules/handle-event/handle-event";
 import StyleInReact from "./modules/style-in-reactjs";
-import State from "./modules/state/state"
+import State from "./modules/state/state";
 import TangGiamFontSize from "./modules/state/tang-giam-font-size";
 import ChangeColorHouse from "./modules/state/change-color-house/change-color-house";
-// import TangGiamFontSize from "./modules/state/tang-giam-font-size";
+import ChangeBackGroundCar from "./modules/state/change-bg-car/change-bg-car";
+import RenderWithArayThuan from "./modules/render-with-array/render-with-array(thuan)";
+import RenderWithArayBiding from "./modules/render-with-array/render-with-array(Biding)";
+import ListCard from "./modules/props/list-card/list-card-car";
+import PhoneShop from "./modules/props/phone-shop/phone-shop";
 
 // đây là file, tạo component App để đưa lên giao diện.
 // js + css + html => .jsx
 function App() {
   return (
     <>
-      <ChangeColorHouse />
+      <PhoneShop />
+      {/* {<ListCard />} */}
 
+      {/* <RenderWithArayBiding/> */}
+      {/* <RenderWithArayThuan /> */}
+
+      {/* <ChangeBackGroundCar/> */}
+      {/* <ChangeColorHouse /> */}
       {/* <TangGiamFontSize /> */}
       {/* <State/> */}
 

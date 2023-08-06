@@ -3,8 +3,17 @@ import React, { Component } from "react";
 export default class ChangeColorHouse extends Component {
   state = { houseColor: "RED" };
 
+  // !Cách 2
   changeColor = (color) => {
-    this.setSate({ houseColor: color, });
+    this.setSate({ houseColor: color });
+  };
+
+  // !Cách 3
+  curyingChangeColor = (color) => {
+    // *Không có return => Undefind
+    return () => {
+      this.setState({ houseColor: color });
+    };
   };
 
   render() {
@@ -26,8 +35,8 @@ export default class ChangeColorHouse extends Component {
         >
           <button
             onClick={() => {
-              //   this.setState({ houseColor: "red" });
-              this.changeColor("red");
+              this.setState({ houseColor: "red" });
+              // this.changeColor("red");
             }}
             className="btn btn-danger"
           >
@@ -35,16 +44,18 @@ export default class ChangeColorHouse extends Component {
           </button>
           <button
             onClick={() => {
-              //   this.setState({ houseColor: "blue" });
-              this.changeColor("blue");
+              // !Cách 1:
+              this.setState({ houseColor: "blue" });
+              // this.changeColor("blue");
             }}
-            className="btn btn-secondary"
+            className="btn btn-primary"
           >
             BLUE
           </button>
           <button
             onClick={() => {
-              //   this.setState({ houseColor: "green" });
+              // this.setState({ houseColor: "green" });
+              // !Cách 2:
               this.changeColor("green");
             }}
             className="btn btn-success"
@@ -52,10 +63,10 @@ export default class ChangeColorHouse extends Component {
             GREEN
           </button>
           <button
-            onClick={() => {
-              //   this.setState({ houseColor: "yellow" });
-              this.changeColor("yellow");
-            }}
+            onClick={
+              //! Cách 3:
+              this.curyingChangeColor("yellow")
+            }
             className="btn btn-warning"
           >
             YELLOW
