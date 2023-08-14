@@ -13,13 +13,15 @@ import RenderWithArayThuan from "./modules/render-with-array/render-with-array(t
 import RenderWithArayBiding from "./modules/render-with-array/render-with-array(Biding)";
 import ListCard from "./modules/props/list-card/list-card-car";
 import PhoneShop from "./modules/props/phone-shop/phone-shop";
+import PhoneShopV1 from "./modules/props/phone-shop/phone-shop(1)";
 
 // đây là file, tạo component App để đưa lên giao diện.
 // js + css + html => .jsx
 function App() {
   return (
     <>
-      <PhoneShop />
+      <PhoneShopV1 />
+      {/* <PhoneShop /> */}
       {/* {<ListCard />} */}
 
       {/* <RenderWithArayBiding/> */}
