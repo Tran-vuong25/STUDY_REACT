@@ -40,6 +40,12 @@ const listPhone = [
     hinhAnh: "/images/phones/sp_note7.png",
   },
 ];
+
+// component: logic + UI (Không nên)
+
+// component chỉ để show UI
+// redux thì xử lý logic
+
 export default class PhoneShopV1 extends Component {
   state = {
     spChiTiet: {
@@ -109,17 +115,49 @@ export default class PhoneShopV1 extends Component {
 
   //? nếu như function có từ 2 -> 3 tham số trở lên thì nên truyền dưới dạng Object
   handleChangeQuality = ({ quality, maSP }) => {
-    console.log(quality, maSP)
+    console.log(quality, maSP);
 
-    if (quality === 1) {
-      //Tăng
-      {sp.soLuong} + 1
+    // * 1. Tìm sản phẩm có maSP trong giỏ hàng
+    // Nếu có thì tăng giảm
+    // Nếu không thì thoát khỏi function => return
+    // * 2.Nếu như số lượng của sản phẩm đang là 1 và người dùng nhất button (-)
+    // Thì xóa sản phẩm ra khỏi giỏ hàng
+    // Giữ nguyên
+
+    const sanPham = this.state.gioHang.find((item) => item.maSP === maSP);
+
+    if (!sanPham) {
+      return;
     }
 
-    if (quality === -1) {
-      // Giảm
-      {sp.soLuong} - 1
+    if (sanPham.soLuong === 1 && quality === -1) {
+      this.handleDeleteSp(maSP); // Thực hiện xong
+      // Thoát khỏi function không thực hiện những dòng lệnh phía dưới nữa
+      return;
     }
+    sanPham.soLuong += quality;
+
+    console.log("Giỏ hàng sau khi đã thay đổi: ", this.state.gioHang);
+
+    this.setState({
+      gioHang: this.state.gioHang,
+    });
+
+    // if (sanPham) {
+    //   sanPham.soLuong += quality;
+    // } else {
+    //   return;
+    // }
+
+    // if (quality === 1) {
+    //   //Tăng
+    //   {sp.soLuong}+1;
+    // }
+
+    // if (quality === -1) {
+    //   // Giảm
+    //   {sp.soLuong}-1;
+    // }
   };
 
   render() {
@@ -132,18 +170,20 @@ export default class PhoneShopV1 extends Component {
             onChangeQuality={this.handleChangeQuality}
           />
         </div>
-        <div className="d-flex gap-2">
+        <div className="row">
           {listPhone.map((item) => {
             return (
-              <ComponentPhone
-                onChangeSanPham={this.handleChangeSanPhamChiTiet}
-                onAddSanPham={this.handleAddSanPham}
-                //   img={item.hinhAnh}
-                //   tenSPham={item.tenSP}
-                //   gia={item.giaBan}
-                phone={item}
-                key={item.maSP}
-              />
+              <div className="col-4">
+                <ComponentPhone
+                  onChangeSanPham={this.handleChangeSanPhamChiTiet}
+                  onAddSanPham={this.handleAddSanPham}
+                  //   img={item.hinhAnh}
+                  //   tenSPham={item.tenSP}
+                  //   gia={item.giaBan}
+                  phone={item}
+                  key={item.maSP}
+                />
+              </div>
             );
           })}
         </div>

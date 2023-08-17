@@ -14,13 +14,18 @@ import RenderWithArayBiding from "./modules/render-with-array/render-with-array(
 import ListCard from "./modules/props/list-card/list-card-car";
 import PhoneShop from "./modules/props/phone-shop/phone-shop";
 import PhoneShopV1 from "./modules/props/phone-shop/phone-shop(1)";
+import CountRedux from "./modules/demo-redux/count";
+import ChangeCarRedux from "./modules/demo-redux/change-car-redux/change-car-redux";
 
 // đây là file, tạo component App để đưa lên giao diện.
 // js + css + html => .jsx
 function App() {
   return (
     <>
-      <PhoneShopV1 />
+      <ChangeCarRedux />
+      {/* <CountRedux /> */}
+
+      {/* <PhoneShopV1 /> */}
       {/* <PhoneShop /> */}
       {/* {<ListCard />} */}
 
