@@ -18,12 +18,15 @@ import CountRedux from "./modules/demo-redux/count";
 import ChangeCarRedux from "./modules/demo-redux/change-car-redux/change-car-redux";
 import PhoneShopRedux from "./modules/demo-redux/phone-shop-redux/phone-shop-redux";
 
+import { ReactForm } from "./modules/react-form";
+
 // đây là file, tạo component App để đưa lên giao diện.
 // js + css + html => .jsx
 function App() {
   return (
     <>
-      <PhoneShopRedux />
+      <ReactForm />
+      {/* <PhoneShopRedux /> */}
       {/* <ChangeCarRedux /> */}
       {/* <CountRedux /> */}
 

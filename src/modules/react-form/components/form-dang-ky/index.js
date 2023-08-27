@@ -1,0 +1,1 @@
+export {FormDangKy} from "./form-dang-ky.jsx"
